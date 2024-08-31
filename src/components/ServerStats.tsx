@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { IServerStats } from "../lib/Types";
 import { FetchServerStats } from "../lib/Fetch";
+import toast from "react-hot-toast";
 
 const ServerStats = () => {
   const [dataRes, setDataRes] = useState<IServerStats>();
@@ -18,7 +19,7 @@ const ServerStats = () => {
   const ClickToCopy = () => {
     const copyText = "connect 185.180.2.15:27552";
     navigator.clipboard.writeText(copyText);
-    alert(`Copied the text: ${copyText}`);
+    toast.success('Successfully copied connection command')
   };
 
   useEffect(() => {

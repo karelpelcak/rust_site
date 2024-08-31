@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FetchServerStats } from "../lib/Fetch";
 import { IPlayers_list } from "../lib/Types";
 
-const Players = () => {
+const LivePlayers = () => {
   const [loading, setLoading] = useState(false);
   const [playerList, setPlayerList] = useState<IPlayers_list[]>();
 
@@ -36,7 +36,7 @@ const Players = () => {
                 <div className="text-white font-semibold">{player.name}</div>
               </div>
               <div className="text-gray-400">
-                {`${(player.time! / 60 / 60).toFixed()} Hours: active`}
+                {`${(player.time! / 60 / 60).toFixed()} Hours session`}
               </div>
             </li>
           ))}
@@ -48,4 +48,4 @@ const Players = () => {
   );
 };
 
-export default Players;
+export default LivePlayers;

@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model PlayerDatabase {
+  id           Int     @id
+  userid       String  @db.VarChar(17)
+  StatisticsDB String? @db.LongText
+  name         String? @db.LongText
+  ip           String? @db.LongText
+  steamid      String? @db.LongText
+}

@@ -1,14 +1,24 @@
+import toast from "react-hot-toast";
+
 const Navbar = () => {
+  const ClickToCopy = () => {
+    const copyText = "connect 185.180.2.15:27552";
+    navigator.clipboard.writeText(copyText);
+    toast.success('Successfully copied connection command')
+  };
   return (
     <div className="flex flex-row items-center justify-between p-4 bg-black shadow-md gap-40 rounded-lg">
       <div className="text-white text-xl font-extrabold transition-colors flex flex-row gap-5">
-        <a href="/players" className="hover:underline hover:text-green-400">
+        <a
+          href="/players/live"
+          className="hover:underline hover:text-green-400"
+        >
           Players
         </a>
-        <a href="/players" className="hover:underline hover:text-green-400">
+        <a href="/team" className="hover:underline hover:text-green-400">
           Team
         </a>
-        <a href="/players" className="hover:underline hover:text-green-400">
+        <a href="/rules" className="hover:underline hover:text-green-400">
           Rules
         </a>
       </div>
@@ -18,7 +28,7 @@ const Navbar = () => {
           Rust CZ/SK/EU Noob Vanilla
         </a>
       </h1>
-      <div>
+      <div className="flex flex-row gap-4 justify-center items-center content-center">
         <a
           href="https://discord.gg/g8xmn7ff3V"
           target="_blank"
@@ -37,6 +47,12 @@ const Navbar = () => {
             </g>
           </svg>
         </a>
+        <button
+          onClick={ClickToCopy}
+          className="h-[50px] py-2 px-4 bg-[#3e4c28] text-[#76983c] rounded-lg shadow-md hover:bg-[#4f6b39] transition-colors"
+        >
+          JOIN SERVER
+        </button>
       </div>
     </div>
   );

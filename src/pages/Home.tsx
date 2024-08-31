@@ -1,4 +1,4 @@
-import ServerStats from "./ServerStats";
+import ServerStats from "../components/ServerStats";
 
 const Home = () => {
   return (
